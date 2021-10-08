@@ -40,7 +40,7 @@ export class AppBase {
   static CITYID = 440300;
   static CITYNAME = "深圳市";
   static CITYSET = false;
-  unicode = "house";
+  unicode = "financial";
   needauth = false;
   phone = null;
   pagetitle = null;
@@ -286,7 +286,7 @@ export class AppBase {
                 AppBase.UserInfo.openid = data.openid;
                 AppBase.UserInfo.session_key = data.session_key;
                 console.log(AppBase.UserInfo);
-                ApiConfig.SetToken(data.openid);
+                // ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
                 //this.loadtabtype();
 
@@ -317,7 +317,7 @@ export class AppBase {
                 AppBase.UserInfo.openid = data.openid;
                 AppBase.UserInfo.session_key = data.session_key;
                 console.log(AppBase.UserInfo);
-                ApiConfig.SetToken(data.openid);
+                // ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
 
                 that.onMyShow();
@@ -363,11 +363,31 @@ export class AppBase {
     that.checkPermission();
   }
   checkPermission() {
+
     console.log('checkPermission')
     var memberapi = new MemberApi();
     var that = this;
 
+    var list = wx.getStorageSync('token')
+    console.log(list,'list')
+    ApiConfig.SetToken(list);
+
+    if (that.Base.needauth == true) {
+
+    }else{
+      if (wx.getStorageSync('token') == '') {
+        console.log(wx.getStorageSync('token') ,'tokengetStorageSync')
+        wx.redirectTo({
+          url: '/pages/login/login',
+      })
+    }
+    }
+
     memberapi.info({}, (info) => {
+      if(info==null){
+        wx.removeStorageSync('token');
+     }
+
       this.Base.setMyData({
         memberinfo: info
       });
@@ -443,14 +463,42 @@ export class AppBase {
     e.detail.session_key = AppBase.UserInfo.session_key;
     e.detail.openid = AppBase.UserInfo.openid;
 
-    api.decrypteddata(e.detail, (ret) => {
-      console.log(ret, '最最最');
+    wx.login({
+      success: res =>{
+        e.detail.code = res.code
+        console.log(res,555)
+        api.decrypteddata(e.detail, (ret) => {
+      // that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
+      AppBase.usmobile = ret.return.phoneNumber
+      this.Base.setMyData({mobile:AppBase.usmobile})
 
-      that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
-      console.log(ret.return.phoneNumber,'phoneNumber')
+      // 拿手机号判断是否存在改用户
 
+
+      
     });
+      }
+    })
+
+    
   }
+
+  // getPhoneNo(e) {
+  //   var that = this;
+
+  //   var api = new WechatApi();
+
+  //   e.detail.session_key = AppBase.UserInfo.session_key;
+  //   e.detail.openid = AppBase.UserInfo.openid;
+
+  //   api.decrypteddata(e.detail, (ret) => {
+  //     console.log(ret, '最最最');
+
+  //     that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
+  //     console.log(ret.return.phoneNumber,'phoneNumber')
+
+  //   });
+  // }
   phonenoCallback(mobile, e, result) {
 
     if (result == '0') {
@@ -1122,6 +1170,7 @@ export class AppBase {
         AppBase.UserInfo.openid = openid;
         AppBase.UserInfo.session_key = session_key;
         console.log("loginres4", userres);
+        return
         
         console.log(this.Base.getMyData().memberinfo, '11');
         var memberinfo = this.Base.getMyData().memberinfo;

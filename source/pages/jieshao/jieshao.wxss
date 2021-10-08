@@ -1,0 +1,10 @@
+.wxParse-img{
+  display: block;
+  width: 100vw !important;
+}
+.WxEmojiView{
+  display: block;
+  padding: 0 30rpx !important;
+  text-indent: 2rem;
+
+}

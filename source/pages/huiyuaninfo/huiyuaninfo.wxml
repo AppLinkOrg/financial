@@ -1,0 +1,154 @@
+<view style="padding:20rpx 30rpx 50rpx 40rpx">
+  <view class="txt-2 txt-bold " style="font-size: 36rpx;">
+  基本资料
+</view>
+<view class="flex-row flex-center 2" style="padding-bottom:20rpx">
+<view class="txt-2 f-30 ">头像</view>
+<view class="flex-1"></view>
+<image  mode="aspectFit" style="width:100rpx;height:100rpx" class="radius-50" src='{{uploadpath}}member2/{{userinfo2.avatarUrl}}' ></image>
+</view>
+
+<!--会员编号  -->
+<view style="padding:36rpx 0 " class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">会员编号</view>
+  <view class="txt-2 f-30 ">{{userinfo2.id>10?userinfo2.id:'0'+userinfo2.id}}</view>
+</view>
+<!--  姓名-->
+<view style="padding:36rpx 0" class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">姓名</view>
+  <view class="txt-2 f-30 ">{{userinfo2.name}}</view>
+</view>
+<!--  性别-->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">性别</view>
+  <view class="txt-2 f-30 ">{{userinfo2.gender_name}}</view>
+</view>
+<!--  出生日期-->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">出生日期</view>
+  <view class="txt-2 f-30 ">{{userinfo2.birth}}</view>
+</view>
+<!-- 毕业年限 -->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">毕业年限</view>
+  <view class="txt-2 f-30 ">{{userinfo2.graduationyears}}</view>
+</view>
+<!-- 城市区域 -->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">城市区域</view>
+  <view class="txt-2 f-30 ">{{userinfo2.city}}</view>
+</view>
+<!-- 行业/方向 -->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">行业/方向</view>
+  <view class="txt-2 f-30 ">{{userinfo2.Industry}}</view>
+</view>
+<!-- 单位名称 -->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">单位名称</view>
+  <view class="txt-2 f-30 ">{{userinfo2.company}}</view>
+</view>
+<!-- 职务 -->
+<view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">职务</view>
+  <view class="txt-2 f-30 ">{{userinfo2.post}}</view>
+</view>
+<!-- 推荐人 -->
+<!-- <view style="padding:36rpx 0" class="flex-row flex-center  bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">推荐人</view>
+  <view class="txt-2 f-30 ">01</view>
+</view> -->
+<!-- 标签 -->
+<view style="padding:36rpx 0" class=" bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">标签</view>
+  <view style="margin-top:40rpx"></view>
+  <view class="" style="display: flex;display: -webkit-flex;justify-content: space-between;flex-direction: row;flex-wrap: wrap;">
+      <view  wx:for="{{userinfo2.biaolist}}" wx:key="k">
+        <view style="padding:17rpx 30rpx;color: #8D0942;border-radius: 10px;margin-top:10rpx;margin-right:10rpx;margin-bottom:10rpx" class="bd-3 f-30 ">{{item}}</view>
+      </view>
+      <view style="width:180rpx"></view>
+      <view style="width:180rpx"></view>
+    </view>
+
+</view>
+<!--联系方式  -->
+<view style="padding:36rpx 0" class=" bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">联系方式</view>
+  <view style="margin-top:42rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">手机号</view>
+    <view class="txt-2 f-30 ">{{item.lianxi}}</view>
+  </view>
+  <view style="margin-top:36rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">微信</view>
+    <view class="txt-2 f-30 ">{{userinfo2.wechat}}</view>
+  </view>
+</view>
+<!-- 详细资料 -->
+
+<view class="txt-2 txt-bold " style="font-size: 36rpx;margin-top:50rpx">
+  基本资料
+</view>
+
+<!-- 教育经历 -->
+<view style="padding:36rpx 0" class=" bd-2">
+  <view class="txt-2 f-30 " style="width:180rpx">教育经历</view>
+  <view style="margin-top:40rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">学历</view>
+    <view class="txt-2 f-30 ">{{userinfo2.education}}</view>
+  </view>
+  <view style="margin-top:40rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">学校</view>
+    <view class="txt-2 f-30 ">{{userinfo2.graduationschool}}</view>
+  </view>
+  <view style="margin-top:40rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">专业</view>
+    <view class="txt-2 f-30 ">{{userinfo2.major}}</view>
+  </view>
+</view>
+<!-- 所在区域 -->
+<view style="padding:36rpx 0" class=" bd-2 flex-row flex-center">
+  <view class="txt-2 f-30 " style="width:180rpx">所在区域</view>
+  <view class="txt-2 f-30 "> {{userinfo2.region}}</view>
+</view>
+<!--  现住址-->
+<view style="padding:36rpx 0" class=" bd-2 flex-row flex-center">
+  <view class="txt-2 f-30 " style="width:180rpx">现住址</view>
+  <view class="txt-2 f-30 ">{{userinfo2.address}}</view>
+</view>
+<!--  能为协会和校友提供的资源、业务-->
+<view style="padding:36rpx 0" class=" bd-2">
+<view class="f-30 txt-2 ">能为协会和校友提供的资源、业务</view>
+<view style="margin-top:20rpx;background: #F8F8F8;padding:17rpx 21rpx;min-height:140rpx">
+  {{userinfo2.provide}}
+</view>
+
+</view>
+<!--自身需要的资源、业务  -->
+<view style="padding:36rpx 0" class=" bd-2">
+<view class="f-30 txt-2 ">自身需要的资源、业务</view>
+<view style="margin-top:20rpx;background: #F8F8F8;padding:17rpx 21rpx;min-height:140rpx">
+  {{userinfo2.need}}
+</view>
+
+</view>
+<!--  兴趣爱好-->
+<view style="padding:36rpx 0" class=" bd-2">
+<view class="f-30 txt-2 ">兴趣爱好</view>
+<view style="margin-top:20rpx;background: #F8F8F8;padding:17rpx 21rpx;min-height:140rpx">
+  {{userinfo2.interest}}
+</view>
+
+</view>
+
+<!-- 身份认证 -->
+<view style="padding:36rpx 0" >
+  <view class="f-30 txt-2 ">身份认证</view>
+  <view style="margin-top:47rpx" class="flex-row flex-center">
+    <view class="txt-2 f-30 " style="width:180rpx">学号</view>
+    <view class="txt-2 f-30 ">{{userinfo2.studentnumber}}</view>
+  </view>
+</view>
+
+
+
+</view>

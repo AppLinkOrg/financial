@@ -1,0 +1,72 @@
+<view style="margin-top:35rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.one}}' ></image>
+  <view style="width:140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.two}}' ></image>
+  <view style="width: 140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.tree}}' ></image>
+  <view class="flex-1"></view>
+</view>
+
+<view style="margin-top:19rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+
+  <view class="txt-1 f-26">填写基本信息</view>
+  <view style="width:48rpx"></view>
+  <view class="txt-1 f-26" >完善资料</view>
+  <view style="width:74rpx"></view>
+  <view class="txt-1 f-26">等待审核</view>
+  <view style="margin-left:18rpx"></view>
+  <view class="flex-1"></view>
+</view>
+
+<!-- 照片 -->
+<view style="margin-top:85rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <view class="radius-50 icon-100 flex-row flex-center  " style="background: #EEEEEE;" bindtap="tupian">
+    <view class="flex-1"></view>
+    <image  mode="aspectFit" class="icon-90"  src='{{uploadpath}}resource/{{res.phone}}'  wx:if="{{logoimg==''}}" ></image>
+    <image   class="icon-100 "  src='{{uploadpath}}member2/{{logoimg}}'  wx:else></image>
+    <view class="flex-1"></view>
+  </view>
+  <view class="flex-1"></view>
+
+</view>
+
+<!-- 姓 名 -->
+<view style="margin:60rpx 70rpx 100rpx">
+<view style="padding:40rpx 0;" class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 ">姓<text style="visibility: hidden" class="txt-2 f-30">名</text>名</view>
+  <view style="width:63rpx"></view>
+  <input type="text" placeholder="请输入您的真实姓名" placeholder-class="txt-1 " class="f-30 txt-2" model:value="{{name}}"/>
+</view>
+
+<view style="padding:40rpx 0;" class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 ">手机号</view>
+  <view style="width:63rpx"></view>
+  <input type="text" placeholder="请输入您的手机号" placeholder-class="txt-1 " class="f-30 txt-2"  model:value="{{shouji}}" />
+</view>
+
+<view style="padding:40rpx 0;" class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 ">密<text style="visibility: hidden" class="txt-2 f-30">名</text>码</view>
+  <view style="width:63rpx"></view>
+  <input type="text" placeholder="请输入您的密码" placeholder-class="txt-1 " class="f-30 txt-2" model:value="{{password}}" />
+</view>
+
+<view style="padding:40rpx 0;" class="flex-row flex-center bd-2">
+  <view class="txt-2 f-30 ">邮<text style="visibility: hidden" class="txt-2 f-30">名</text>箱</view>
+  <view style="width:63rpx"></view>
+  <input type="text" placeholder="请输入您的邮箱" placeholder-class="txt-1 " class="f-30 txt-2" model:value="{{email}}"/>
+</view>
+
+
+
+</view>
+
+<!-- 登录 -->
+<view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="nex">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold">下一步</view>
+  <view class="flex-1"></view>
+</view>
+

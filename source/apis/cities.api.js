@@ -1,15 +1,15 @@
 /*******使用方法，下面两句复制到page的js文件的头部
 
 import { ApiConfig } from '../../apis/apiconfig';
-import { InstApi } from '../../apis/example.api';
+import { InstApi } from '../../apis/cities.api';
 
-var exampleApi=new ExampleApi();
+var citiesApi=new CitiesApi();
 *******/
 import { ApiConfig } from 'apiconfig';
-export class ExampleApi{
+export class CitiesApi{
 
 
-    hello(json, callback, showLoading = true) {
+    citieslist(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class ExampleApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'example/hello',
+            url: ApiConfig.GetApiUrl() + 'cities/citieslist',
             data: json,
             method: 'POST',
             dataType: 'json',

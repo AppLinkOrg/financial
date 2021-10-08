@@ -1,0 +1,22 @@
+
+<view style="margin-top:96rpx"></view>
+<view style="margin:auto;background: #8D0942;" class="icon-100 radius-50 flex-row flex-center ">
+  <view class="flex-1"></view>
+  <image  mode="aspectFit" class="icon-50"  src='{{uploadpath}}resource/{{res.wancehgn}}' ></image>
+  <view class="flex-1"></view>
+</view>
+
+<view class="txt-2 text-center txt-bold f-30 " style="margin-top:30rpx">完成审核，登录账号已生成</view>
+
+<view style="margin-top:50rpx"></view>
+<view class=" h5 txt-bold text-center" style="color:#930F4B">账号：{{mobile}}</view>
+<view style="margin-top:20rpx"></view>
+<view class=" h5 txt-bold text-center" style="color:#930F4B">密码：{{password}}</view>
+
+<view style="margin-top:89rpx"></view>
+  <!-- 登录 -->
+<view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="denglu">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold">返回登录</view>
+  <view class="flex-1"></view>
+</view>

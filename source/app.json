@@ -1,17 +1,27 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
+    "pages/login/login",
+    "pages/jieshao/jieshao",
+    "pages/register/register",
+    "pages/wansahn/wansahn",
+    "pages/shenhe/shenhe",
+    "pages/wanchegn/wanchegn",
+    "pages/huiyuaninfo/huiyuaninfo",
+    "pages/ceshi/ceshi",
     "pages/auth/auth"
+    
   ],
-   "permission": {
+  "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "white",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,350 @@
+<view style="margin-top:35rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.one}}' ></image>
+  <view style="width:140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.two2}}' ></image>
+  <view style="width: 140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.tree}}' ></image>
+  <view class="flex-1"></view>
+</view>
+
+
+<view style="margin-top:19rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+
+  <view class="txt-1 f-26">填写基本信息</view>
+  <view style="width:48rpx"></view>
+  <view class="txt-1 f-26" >完善资料</view>
+  <view style="width:74rpx"></view>
+  <view class="txt-1 f-26">等待审核</view>
+  <view style="margin-left:18rpx"></view>
+  <view class="flex-1"></view>
+</view>
+
+<view class="flex-row flex-center" style="margin-top:85rpx;background: #F8F8F8;height:70rpx">
+  <view style="width:40rpx"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.zhushi}}' ></image>
+  <view class="padding-left-10 h6 " style="color: #8D0942;">请填写真实有效的信息。</view>
+</view>
+
+<view style="margin:0 40rpx 50rpx">
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">性别</view>
+    <view style="width:40rpx"></view>
+    <picker mode="selector" range="{{xinbie}}" range-key="name" class="flex-1"  bindchange="changexb">
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 " placeholder="选择您的性别" model:value="{{xinbiename}}" disabled="disabled" />
+  </picker>
+    <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">出生日期</view>
+    <view style="width:40rpx"></view>
+    <picker mode="date" end="{{enddata}}" class="flex-1" bindchange="changecs" fields="month">
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 " placeholder="选择或输入您的出生日期" model:value="{{birth}}" disabled="disabled" />
+  </picker>
+    <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+  </view>
+
+  <view style="padding:36rpx 0  " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">婚姻状况</view>
+    <view style="width:40rpx"></view>
+    <picker mode="selector" range="{{marlist}}" range-key="name"  class="flex-1" bindchange="changehy">
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30  " placeholder="选择或输入您的婚姻状况" model:value="{{maritalstatus}}" disabled="disabled" />
+  </picker>
+    <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">毕业年限</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30  " placeholder="选择或输入您的毕业年限" model:value="{{graduationyears}}"/>
+    <picker  mode="date" header-text="选择时间" fields="year" value="{{date}}" bindchange="bindDateChange"  class="flex-1">
+<view class="flex-row ">
+  <view class="flex-1"></view>
+    <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image></view>
+  </picker>
+  </view>
+
+  <view style="padding:36rpx 0 "  class="bd-2">
+    <view class="txt-2 f-30">教育经历</view>
+    <view style="padding:40rpx 0  0" class=" flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">学历</view>
+    <view style="width:40rpx"></view>
+    <picker  mode="selector" range="{{xueli}}" class="flex-1 "  bindchange="changexl">
+    <view class="flex-row">
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请选择" disabled="disabled" model:value="{{education}}" />
+    <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+  </view>
+  </picker>
+  </view>
+  <view style="padding:40rpx 0 0" class=" flex-row flex-center">
+    <view style="width:140rpx " class="txt-2 f-30">学校</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请输入" model:value="{{graduationschool}}" />
+  </view>
+  <view style="padding:40rpx 0 0" class=" flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">专业</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请填写专业名称" model:value="{{major}}" />
+  </view>
+
+    
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">城市区域</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30  " placeholder="选择或输入您的城市" model:value="{{city}}" />
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+value="{{multiIndex}}" range="{{multiArray}}"  range-key="name"  class="flex-1 ">
+    <!-- <picker mode="selector" range="{{citieslist}}" class="flex-1 " range-key="city"   bindchange="changechen" > -->
+    <view class="flex-row">
+      <view class="flex-1"></view>
+      <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+    </view>
+    </picker>
+
+
+
+
+   
+  </view>
+
+
+   <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">所在区域</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30  " placeholder="选择或输入您的所在区域" model:value="{{area}}"  />
+    <picker mode="selector" range="{{areaslist}}" class="flex-1 " range-key="area"   bindchange="changequ" >
+      <view bindtap="tishi">
+<view style="pointer-events:{{city==''?'auto':'none'}}">
+     <view class="flex-row">
+      <view class="flex-1"></view>
+      <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+    </view>
+</view> 
+</view>
+ 
+    </picker>
+
+
+</view>
+
+
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx" class="txt-2 f-30">现住址</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="（选填）" model:value="{{address}}"  />
+    <!-- <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image> -->
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">行业/方向</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 " placeholder="选择或输入您的行业/方向" model:value="{{Industry}}" />
+  <picker mode="selector" range="{{hanye}}" class="flex-1" bindchange="changefx" >
+      <view class="flex-row">
+        <view class="flex-1"></view>
+        <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+      </view>
+    </picker>
+  
+  </view>
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx " class="txt-2 f-30">单位名称</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请输入您的单位名称" model:value="{{company}}"  />
+    <!-- <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image> -->
+  </view>
+  <view style="padding:36rpx 0 " class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">职务</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请输入您的职务" model:value="{{post}}"  />
+    <!-- <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image> -->
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2">
+    <view  class="txt-2 f-30 ">能为协会和校友提供的资源、业务</view>
+    <view class="margin-top-20"></view>
+    <view style="padding:20rpx;background: #F8F8F8;">
+      <textarea placeholder-class="txt-2 " class="txt-2 f-30" style="width:100%;min-height: 100rpx;" model:value="{{provide}}">
+
+</textarea>
+    </view>
+
+
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2">
+    <view  class="txt-2 f-30 ">自身需要的资源、业务</view>
+    <view class="margin-top-20"></view>
+    <view style="padding:20rpx;background: #F8F8F8;">
+    <textarea placeholder-class="txt-2 " class="txt-2 f-30" style="width:100%;min-height: 100rpx;" model:value="{{need}}">
+
+    </textarea>
+  </view>
+
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2">
+    <view  class="txt-2 f-30 ">兴趣爱好</view>
+    <view class="margin-top-20"></view>
+    <view style="padding:20rpx;background: #F8F8F8;">
+    <textarea placeholder-class="txt-2 " class="txt-2 f-30" style="width:100%;min-height: 100rpx;" model:value="{{interest}}">
+
+    </textarea>
+  </view>
+
+  </view>
+
+  <view style="padding:36rpx 0 " class="bd-2">
+    <view class="flex-row flex-center">
+      <view  class="txt-2 f-30 ">标签</view>
+      <view class="h6 txt-1 " style="padding-left:22rpx">最多可添加5个</view>
+    </view>
+   
+    <view style="margin-top:30rpx"></view>
+    <view class="" style="display: flex;display: -webkit-flex;justify-content: space-between;flex-direction: row;flex-wrap: wrap;">
+      <view style=" position: relative;" wx:for="{{bqlise}}" wx:key="k">
+        <view style="padding:17rpx 30rpx;color: #8D0942;border-radius: 10px;margin-top:10rpx;margin-right:10rpx;margin-bottom:10rpx" class="bd-3 f-30 ">{{item}}</view>
+        <image  mode="aspectFit"  style="  width: 36rpx;height: 36rpx; position: absolute;right:0;top:0;"  src='{{uploadpath}}resource/{{res.quxciao}}' bindtap="shanchu" id="{{index}}"></image>
+      </view>
+      <view style="padding:17rpx 30rpx;color: #8D0942;border-radius: 10px;margin-top:10rpx;margin-right:10rpx;margin-bottom:10rpx" class="bd-3 f-30 " bindtap="tianjia">+添加标签</view>
+      <view style="width:180rpx"></view>
+
+    </view>
+
+
+  </view>
+
+  <view style="padding:36rpx 0 " class="">
+    <view class="flex-row flex-center">
+      <view  class="txt-2 f-30 ">联系方式</view>
+      <view class="flex-1"></view>
+      <image  mode="aspectFit"  style="  width: 24rpx;height: 24rpx;"  src='{{uploadpath}}resource/{{res.xia}}' ></image>
+    </view>
+
+    <view style="padding-top:36rpx"></view>
+    <view style="padding: 0 0  36rpx" class="flex-row flex-center">
+    <view style="width:140rpx" class="txt-2 f-30">手机号</view>
+    <view style="width:40rpx"></view>
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="请输入" model:value="{{lianxi}}"  />
+    <image  mode="aspectFit"  style=" width: 36rpx;height: 36rpx;"  src='{{uploadpath}}resource/{{res.quxciao}}' bindtap="qingkong" id="1" ></image>
+  </view>
+  <view style="padding: 0 0  36rpx" class="bd-2 flex-row flex-center">
+    <view style="width:140rpx" class="txt-2 f-30">微信</view>
+    <view style="width:40rpx"></view>
+    <!-- wechat -->
+    <button open-type="getPhoneNumber" class="clear-button flex-1" hover-class="none" wx:if="{{mobile==undefined }}" bindgetphonenumber="getPhoneNo" >
+     
+      <input type="text" placeholder-class="txt-1" class="txt-2 f-30  " placeholder="获取微信号" model:value="{{mobile}}" disabled="disabled" />
+    </button>
+    <input  wx:else type="text" placeholder-class="txt-1" class="txt-2 f-30  flex-1 " placeholder="获取微信号" model:value="{{mobile}}" disabled="disabled" />
+   
+    <!-- <image  mode="aspectFit"  style=" width: 36rpx;height: 36rpx;"  src='{{uploadpath}}resource/{{res.quxciao}}' bindtap="qingkong" id="2" ></image> -->
+  </view>
+
+  </view>
+
+  <view style="padding:36rpx 0 " class="">
+    <view class="flex-row flex-center">
+      <view  class="txt-2 f-30 ">身份认证</view>
+      <view style="padding-left:22rpx" class="txt-1 h6">填写深大学号或上传其他认证</view>
+    </view>
+    <view style="margin:40rpx 0" class="flex-row flex-center">
+      <view bindtap="upwximg">
+        <image  mode="aspectFit"  style=" width: 299rpx;height: 202rpx;"  src='{{uploadpath}}resource/{{res.shanchaun}}' wx:if="{{card==''}}"></image>
+        <image  mode="aspectFit"  style=" width: 299rpx;height: 202rpx;"  src='{{uploadpath}}member/{{card}}' wx:else></image>
+      </view>
+     
+      <view class="flex-1"></view>
+      <view style="width:250rpx;height:150rpx;background: #F3E0EA;color: #8D0942;line-height: 40rpx;padding:0 26rpx" class="bd-3 h6  txt-bold flex-row flex-center">上传校园卡、学生证、 毕业证，（三选一即可）</view>
+    </view>
+    <view style="padding:0rpx 0 36rpx" class="bd-2 flex-row flex-center">
+    <view style="width:140rpx  " class="txt-2 f-30">学号</view>
+    <view style="width:40rpx"></view>
+    <!-- <input type="text" placeholder="输入您的学号" placeholder-class="txt-1"  class="txt-2 f-30 flex-1 "  /> -->
+    <input type="text" placeholder-class="txt-1" class="txt-2 f-30 flex-1 " placeholder="输入您的学号" model:value="{{studentnumber}}"/>
+  </view>
+
+  </view>
+
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-center" bindtap="select" id="A">
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz}}'   wx:if="{{show=='A'}}"></image>
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz2}}'  wx:else></image>
+
+      <view style="padding-left:19rpx"></view>
+      <view class="f-26 txt-2">对非会员公开</view>
+    </view>
+    <view style="width:90rpx"></view>
+    <view class="flex-1 flex-row flex-center" bindtap="select" id="B">
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz}}'   wx:if="{{show=='B'}}"></image>
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz2}}'  wx:else></image>
+      <view style="padding-left:19rpx"></view>
+      <view class="f-26 txt-2">对会员公开</view>
+    </view>
+  </view>
+<view style="margin-top:18rpx"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-center" bindtap="select" id="D">
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz}}'   wx:if="{{show=='D'}}"></image>
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz2}}'  wx:else></image>
+      <view style="padding-left:19rpx"></view>
+      <view class="f-26 txt-2">自己和后台可见</view>
+    </view>
+    <view style="width:90rpx"></view>
+    <view class="flex-1 flex-row flex-center" bindtap="select" id="C">
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz}}'   wx:if="{{show=='C'}}"></image>
+      <image  mode="aspectFit"  style=" "  class="icon-36" src='{{uploadpath}}resource/{{res.xuanz2}}'  wx:else></image>
+      <view style="padding-left:19rpx"></view>
+      <view class="f-26 txt-2">对管理服务团队公开</view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+</view>
+
+<view style="margin-top:50rpx"></view>
+  <!-- 登录 -->
+<view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="nex">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold">完成</view>
+  <view class="flex-1"></view>
+</view>
+<view style="margin-top:50rpx"></view>
+
+
+<!-- 标签 -->
+<view style="position: fixed;top:0;left:0;width:100vw;background:rgba(0,0,0,0.5);height:100vh;z-index:99"  wx:if="{{bqshow}}"></view>
+<view style=" position: fixed;top:20%;left:0;width:100vw;z-index:99" wx:if="{{bqshow}}">
+
+  <view style="margin:0 75rpx;background:#fff;border-radius:30rpx;padding:20rpx" class="">
+    <view class="f-30 txt-2 text-center">标签</view>
+    <view style="margin-top:20rpx"></view>
+    <input type="text" placeholder="请输入标签" placeholder-class="txt-1" class="txt-2 f-30 bd-1"  model:value="{{baiqian}}"/>
+    <view style="margin-top:50rpx"></view>
+    <view class="flex-row ">
+      <view class="flex-1"></view>
+      <view class=" txt-white" style="height:70rpx;padding-left:30rpx;padding-right:30rpx;line-height:70rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 35px;" bindtap="queren">确认</view>
+      <view style="margin-left:40rpx"></view>
+      <view class="bd-4 " style="height:70rpx;padding-left:30rpx;padding-right:30rpx;line-height:70rpx;border-radius: 35px;" bindtap="quxiao" >取消</view>
+      <view class="flex-1"></view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+

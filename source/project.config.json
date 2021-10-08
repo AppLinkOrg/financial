@@ -1,40 +1,114 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"autoAudits": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
-	"appid": "",
-	"projectname": "",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.0",
+  "appid": "wx4460e5ec60178eeb",
+  "projectname": "%E9%87%91%E8%9E%8D%E5%8D%8F%E4%BC%9A",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/jieshao/jieshao",
+          "pathName": "pages/jieshao/jieshao",
+          "query": "id=1&name=协会简介",
+          "scene": null
+        },
+        {
+          "name": "pages/register/register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wansahn/wansahn",
+          "pathName": "pages/wansahn/wansahn",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "pages/shenhe/shenhe",
+          "pathName": "pages/shenhe/shenhe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wanchegn/wanchegn",
+          "pathName": "pages/wanchegn/wanchegn",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "pages/ceshi/ceshi",
+          "pathName": "pages/ceshi/ceshi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/huiyuaninfo/huiyuaninfo",
+          "pathName": "pages/huiyuaninfo/huiyuaninfo",
+          "query": "id=1",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

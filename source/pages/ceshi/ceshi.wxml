@@ -1,0 +1,20 @@
+<!-- <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ 
+<view class="modalDlg" wx:if="{{showModal}}">
+ <image src="/figures/logo-smile.png"/>
+ <text>欢迎来到模态对话框~</text>
+ <button bindtap="go">点我可以关掉对话框</button>
+</view>
+ 
+<button bindtap="submit">点我弹窗</button> -->
+
+
+<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+value="{{multiIndex}}" range="{{multiArray}}"  range-key="name">
+<view class="picker">
+当前选择： {citiname}
+<!-- <van-button type="primary">
+{{newArr[0][multiIndex[0]]}}，{{newArr[1][multiIndex[1]]}}，{{newArr[2][multiIndex[2]]}}</van-button> -->
+</view>
+</picker>
+

@@ -118,7 +118,21 @@ view,navigator,input,text,textarea{
 .border_white_primary{
   border-bottom: 4rpx solid #2699EC;
   
+  
 }
+.bd-1{
+  border-bottom: 1rpx solid #CDCDCD;
+ }
+ .bd-2{
+  border-bottom: 1rpx solid #EEEEEE;
+ }
+ .bd-3{
+  border: 1rpx solid #8D0942;
+ }
+ .bd-4{
+  border: 1rpx solid #EEEEEE;
+ }
+
 .txt-primary{
   color:#2699EC;
 }
@@ -150,6 +164,15 @@ view,navigator,input,text,textarea{
 .txt-bold{
   font-weight: bolder;
 }
+.txt-1{
+  color: #999999;
+}
+.txt-2{
+  color: #333;
+}
+.txt-3{
+  color: #666;
+}
 .nowrap{
   word-break:keep-all;           /* 不换行 */
 white-space:nowrap;          /* 不换行 */
@@ -176,8 +199,14 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .h6{
   font-size: 24rpx !important;
 }
+.f-26{
+  font-size: 26rpx !important;
+}
 .h7{
   font-size: 20rpx !important;
+}
+.f-30{
+  font-size: 30rpx !important;
 }
 .f-32{
   font-size: 32rpx !important;
@@ -311,6 +340,7 @@ button[disabled][type=primary] {
 }
 .margin-10{
   margin:10rpx;
+ 
 }
 .margin-20{
   margin:20rpx;
@@ -435,6 +465,14 @@ button[disabled][type=primary] {
 .icon-30{
   width: 60rpx;
   height: 60rpx;
+}
+.icon-36{
+  width: 36rpx;
+  height: 36rpx;
+}
+.icon-90{
+  width: 90rpx;
+  height: 90rpx;
 }
 .icon-40{
   width: 80rpx;

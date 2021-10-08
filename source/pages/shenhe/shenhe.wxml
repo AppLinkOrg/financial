@@ -1,0 +1,39 @@
+<view style="margin-top:35rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.one}}' ></image>
+  <view style="width:140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.two2}}' ></image>
+  <view style="width: 140rpx;height: 2rpx;background: #CDCDCD;"></view>
+  <image  mode="aspectFit" class="icon-36"  src='{{uploadpath}}resource/{{res.tree2}}' ></image>
+  <view class="flex-1"></view>
+</view>
+
+<view style="margin-top:19rpx" class="flex-row flex-center">
+  <view class="flex-1"></view>
+
+  <view class="txt-1 f-26">填写基本信息</view>
+  <view style="width:48rpx"></view>
+  <view class="txt-1 f-26" >完善资料</view>
+  <view style="width:74rpx"></view>
+  <view class="txt-1 f-26">等待审核</view>
+  <view style="margin-left:18rpx"></view>
+  <view class="flex-1"></view>
+</view>
+
+<view style="margin-top:194rpx"></view>
+<view style="margin:auto;background: #8D0942;" class="icon-100 radius-50 flex-row flex-center ">
+  <view class="flex-1"></view>
+  <image  mode="aspectFit" class="icon-90"  src='{{uploadpath}}resource/{{res.jizai}}' ></image>
+  <view class="flex-1"></view>
+</view>
+
+<view class="txt-2 text-center txt-bold f-30 " style="margin-top:30rpx">审核中，请耐心等待</view>
+
+
+<view style="margin-top:156rpx"></view>
+  <!-- 登录 -->
+<view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="denglu">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold">返回登录</view>
+  <view class="flex-1"></view>
+</view>

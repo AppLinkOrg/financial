@@ -1,1 +1,24 @@
-home
+<view style="margin:15rpx 20rpx;background:#F8F8F8;height:60rpx;padding:0 28rpx;border-radius: 30rpx;" class="flex-row flex-center">
+  <image  mode="aspectFit" class="icon"  src='{{uploadpath}}resource/{{res.sousuo}}' ></image>
+  <input type="text" class="txt-2 f-30 flex-1" style="padding:0 20rpx" bindinput="neirong" />
+</view>
+
+<scroll-view style="height:100vh" scroll-y  bindscrolltolower="bottomscroll">
+<view style="padding:40rpx 21rpx 21rpx 30rpx" class="bd-2 flex-row flex-center" wx:for="{{list}}" wx:key="k" bindtap="xianq" id="{{item.id}}">
+  <image  mode="aspectFit" style="width:150rpx;height:150rpx" src='{{uploadpath}}member2/{{item.avatarUrl}}' ></image>
+  <view style="margin-left:20rpx"></view>
+  <view class="flex-1">
+    <view class="txt-2 f-30 txt-bold">{{item.name}}</view>
+    <view class="flex-row" style="margin-top:27rpx">
+      <view class="txt-3 h6 ">编号：{{item.id>10?item.id:'0'+item.id}}</view>
+      <view class="txt-3 h6 "  style="margin-left:81rpx">毕业年限：{{item.graduationyears}}</view>
+    </view>
+    <view style="margin-top:19rpx" class="txt-3 h6 ">公司及职务：{{item.company}} {{item.post}}</view>
+    <view class="flex-row">
+      <view class="flex-1"></view>
+      <image  mode="aspectFit"  class="icon" src='{{uploadpath}}resource/{{res.	jaintou}}' ></image>
+    </view>
+
+  </view>
+</view>
+</scroll-view>

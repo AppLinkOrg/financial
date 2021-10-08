@@ -1,0 +1,84 @@
+<view style="height:118rpx"></view>
+<image  mode="widthFix"  src='{{uploadpath}}resource/{{res.logo}}' style="width:400rpx; display: block;margin: auto;"></image>
+<view style="height:156rpx"></view>
+<!-- 请输入手机号 -->
+<view style="margin:0 70rpx;padding:21rpx 0 " class="bd-1 flex-row flex-center">
+  <image  mode="aspectFit" class="icon-25"  src='{{uploadpath}}resource/{{res.mobile}}' ></image>
+  <view  style="padding-left: 28rpx"></view>
+  <input type="number"  class="f-30 flex-1" placeholder-class="txt-1"  placeholder="请输入手机号" model:value="{{shoujihao}}" />
+</view>
+<view class="margin-top"></view>
+
+<!-- 请输入密码 -->
+<view style="margin:0 70rpx;padding:21rpx 0 " class="bd-1 flex-row flex-center">
+  <image  mode="aspectFit" class="icon-25"  src='{{uploadpath}}resource/{{res.password}}' ></image>
+  <view  style="padding-left: 28rpx"></view>
+  <input type="{{leix}}"  class="f-30 flex-1" placeholder-class="txt-1"  placeholder="请输入密码" model:value="{{password}}" />
+<view bindtap="xuanze">
+  <image  mode="aspectFit" class="icon"  src='{{uploadpath}}resource/{{res.eye}}' wx:if="{{xzshow}}"></image>
+  <image  mode="aspectFit" class="icon"  src='{{uploadpath}}resource/{{res.eye2}}' wx:else></image>
+</view>
+</view>
+
+<view style="height:59rpx"></view>
+
+<!-- 登录 -->
+<view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="denglu">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold">登录</view>
+  <view class="flex-1"></view>
+</view>
+
+<!-- 新用户注册 -->
+<view style="margin-top:29rpx" class=" flex-row">
+  <view class="flex-1"></view>
+  <button open-type="getPhoneNumber" class="clear-button" hover-class="none" wx:if="{{memberinfo==null && mobile==undefined }}" bindgetphonenumber="getPhoneNo" >
+  <view class="h6 txt-1" >新用户注册</view>
+</button>
+<view class="h6 txt-1" bindtap="yonghu" wx:else>新用户注册</view>
+
+  <view class="flex-1"></view>
+</view>
+
+<!-- 协会简介 -->
+<view style=" position: fixed;bottom:50rpx;left:0;width:100vw ">
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <view wx:for="{{contentlist}}" wx:key="k" class="flex-row flex-center" bindtap="jiehsao" id="{{index}}">
+      <view class="h6 txt-1 ">{{item.name}}</view>
+    <view style="width: 1px;height: 30rpx;background: #CDCDCD;margin:0 17rpx" wx:if="{{index*1!=contentlist.length-1}}"></view>
+    </view>
+
+    <!-- <view class="h6 txt-1 ">协会章程</view>
+    <view style="width: 1px;height: 30rpx;background: #CDCDCD;margin:0 17rpx"></view>
+    <view class="h6 txt-1 ">联系我们</view>
+    <view style="width: 1px;height: 30rpx;background: #CDCDCD;margin:0 17rpx"></view>
+    <view class="h6 txt-1 ">团队成员</view> -->
+    <view class="flex-1"></view>
+  </view>
+
+  <view bindtap="jishu">
+    <view class="text-center txt-bold h6" style="margin-top:39rpx;color:#95114C;margin-bottom:6rpx">技术支持</view>
+  <view style="width: 96rpx;height: 1px;background: #94114D;margin:auto"></view>
+  </view>
+
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ 
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view style="padding:20rpx">
+    <view class="text-center txt-bold h5 txt-2">技术支持</view>
+    <view style="margin-top:20rpx"></view>
+    <view class="text-center txt-bold h6 txt-2 ">{{instinfo.zhichi}}</view>
+    <view style="margin-top:50rpx"></view>
+    <view style="height: 90rpx;background: linear-gradient(268deg, #8D0942 0%, #A9266A 100%);border-radius: 45rpx;margin:0 70rpx;" class="flex-row flex-center  " bindtap="guanbi">
+  <view class="flex-1"></view>
+  <view class="f-30 txt-white txt-bold" >关闭</view>
+  <view class="flex-1"></view>
+</view>
+
+  </view>
+
+</view>
+
